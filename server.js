@@ -16,12 +16,12 @@ app.use((req, res, next) => {
 })
 app.use(cors())
 
-mongoose.connect(process.env.MONGO_URI), {
+mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false
-}
+});
 
 mongoose.connection.once('connect', () => {
   console.log('Connected to MongoDB')
