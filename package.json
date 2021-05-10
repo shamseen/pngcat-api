@@ -1,0 +1,17 @@
+{
+  "name": "pngcat-api",
+  "version": "0.0.1",
+  "main": "server.js",
+  "repository": "https://github.com/shamseen/pngcat-api.git",
+  "author": "hengyuni <hengyuni@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.8"
+  }
+}
