@@ -27,6 +27,8 @@ mongoose.connection.once('connect', () => {
   console.log('Connected to MongoDB')
 })
 
+app.use('/pngcats', require('./controllers/pngcatsController'))
+
 app.get('/', (req, res) => {
   res.send(`<h1>pngcat</h1>`)
 })
