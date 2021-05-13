@@ -5,22 +5,24 @@ const Pngcat = require('../models/Pngcat')
 // Index
 router.get('/', async (req, res) => {
   let filters;
-  if(Object.keys(req.query).length > 0) {
+  if (Object.keys(req.query).length > 0) {
     filters = { ...req.query }
   }
-  try {
-    if(!filters){
-      const foundPngcats = await Pngcat.find({});
-      res.status(200).json(foundPngcats)
-    } else {
-      const foundPngcats = await Pngcat.find({ ...filters });
-      res.status(200).json(foundPngcats)
-    }
-  } catch (err) {
-    res.status(400).json({
-      msg: err.message
-    })
-  }
+
+  res.status(200).send('woop');
+  // try {
+  //   if(!filters){
+  //     const foundPngcats = await Pngcat.find({});
+  //     res.status(200).json(foundPngcats)
+  //   } else {
+  //     const foundPngcats = await Pngcat.find({ ...filters });
+  //     res.status(200).json(foundPngcats)
+  //   }
+  // } catch (err) {
+  //   res.status(400).json({
+  //     msg: err.message
+  //   })
+  // }
 });
 
 // Create
@@ -28,7 +30,7 @@ router.post('/', async (req, res) => {
   try {
     const foundPngcat = await Pngcat.create(req.body)
     res.status(200).json(createdPngcat)
-  } catch(err) {
+  } catch (err) {
     res.status(400).json({
       msg: err.message
     })
