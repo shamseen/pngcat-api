@@ -1,0 +1,389 @@
+[{
+  "_id": "28c1f46c-ebf5-428f-af6e-2c4bd9a6e1cf",
+  "DNA_Seq": "RuEWWsADpv",
+  "DOI": "174.145.220.31/6",
+  "Authors": [
+    {
+      "Author": "Rabi Ahrens"
+    },
+    {
+      "Author": "Faunie Marousek"
+    },
+    {
+      "Author": "Amii Scadding"
+    },
+    {
+      "Author": "Dacie Dowry"
+    },
+    {
+      "Author": "Fayina Hayhoe"
+    }
+  ],
+  "SBOL-VO-WS": "/lacinia/nisi/venenatis.xml",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Tamandua tetradactyla",
+      "Gene_Label": "791910830-6",
+      "Location": {
+        "start": 35,
+        "end": 84
+      }
+    },
+    {
+      "Ontology_Term": "Damaliscus lunatus",
+      "Gene_Label": "422177843-1",
+      "Location": {
+        "start": 22,
+        "end": 57
+      }
+    },
+    {
+      "Ontology_Term": "Phascogale calura",
+      "Gene_Label": "844774823-5",
+      "Location": {
+        "start": 92,
+        "end": 79
+      }
+    },
+    {
+      "Ontology_Term": "Spermophilus armatus",
+      "Gene_Label": "021896862-0",
+      "Location": {
+        "start": 19,
+        "end": 56
+      }
+    },
+    {
+      "Ontology_Term": "Didelphis virginiana",
+      "Gene_Label": "998396707-3",
+      "Location": {
+        "start": 53,
+        "end": 71
+      }
+    },
+    {
+      "Ontology_Term": "Sagittarius serpentarius",
+      "Gene_Label": "054814897-X",
+      "Location": {
+        "start": 46,
+        "end": 70
+      }
+    },
+    {
+      "Ontology_Term": "Panthera leo persica",
+      "Gene_Label": "236040052-5",
+      "Location": {
+        "start": 4,
+        "end": 67
+      }
+    },
+    {
+      "Ontology_Term": "Chauna torquata",
+      "Gene_Label": "201700748-X",
+      "Location": {
+        "start": 76,
+        "end": 50
+      }
+    },
+    {
+      "Ontology_Term": "Felis chaus",
+      "Gene_Label": "473733438-3",
+      "Location": {
+        "start": 62,
+        "end": 79
+      }
+    }
+  ]
+}, {
+  "_id": "acd91611-16fa-4678-98d8-cdbf9c7a0ac7",
+  "DNA_Seq": "biua2Uo",
+  "DOI": "105.165.81.86/22",
+  "Authors": [
+    {
+      "Author": "Drew Doumerc"
+    },
+    {
+      "Author": "Prissie Roll"
+    },
+    {
+      "Author": "Wilton Pietruschka"
+    },
+    {
+      "Author": "Sergeant Cleobury"
+    },
+    {
+      "Author": "Kippy Fouracres"
+    }
+  ],
+  "SBOL-VO-WS": "/justo/in/hac/habitasse.html",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Spermophilus richardsonii",
+      "Gene_Label": "814829593-X",
+      "Location": {
+        "start": 49,
+        "end": 11
+      }
+    },
+    {
+      "Ontology_Term": "Tockus flavirostris",
+      "Gene_Label": "220584487-3",
+      "Location": {
+        "start": 51,
+        "end": 67
+      }
+    },
+    {
+      "Ontology_Term": "Tadorna tadorna",
+      "Gene_Label": "475397861-3",
+      "Location": {
+        "start": 19,
+        "end": 12
+      }
+    },
+    {
+      "Ontology_Term": "Canis mesomelas",
+      "Gene_Label": "105226089-6",
+      "Location": {
+        "start": 32,
+        "end": 74
+      }
+    },
+    {
+      "Ontology_Term": "Tenrec ecaudatus",
+      "Gene_Label": "756330022-8",
+      "Location": {
+        "start": 79,
+        "end": 80
+      }
+    },
+    {
+      "Ontology_Term": "Alouatta seniculus",
+      "Gene_Label": "353400795-6",
+      "Location": {
+        "start": 13,
+        "end": 12
+      }
+    }
+  ]
+}, {
+  "_id": "0ba9340c-f913-49a0-9987-08ead849a205",
+  "DNA_Seq": "2WHTK4",
+  "DOI": "250.24.70.0/1",
+  "Authors": [
+    {
+      "Author": "Iolanthe Yitzovicz"
+    },
+    {
+      "Author": "Mildrid Kment"
+    },
+    {
+      "Author": "Cora Ciccottini"
+    },
+    {
+      "Author": "Winthrop Houlston"
+    },
+    {
+      "Author": "Janene Whatmough"
+    }
+  ],
+  "SBOL-VO-WS": "/accumsan.json",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Gekko gecko",
+      "Gene_Label": "639466630-0",
+      "Location": {
+        "start": 34,
+        "end": 83
+      }
+    },
+    {
+      "Ontology_Term": "Dendrocitta vagabunda",
+      "Gene_Label": "161948264-9",
+      "Location": {
+        "start": 49,
+        "end": 66
+      }
+    },
+    {
+      "Ontology_Term": "Francolinus leucoscepus",
+      "Gene_Label": "960480869-9",
+      "Location": {
+        "start": 1,
+        "end": 1
+      }
+    },
+    {
+      "Ontology_Term": "Terrapene carolina",
+      "Gene_Label": "276780858-6",
+      "Location": {
+        "start": 95,
+        "end": 98
+      }
+    },
+    {
+      "Ontology_Term": "Funambulus pennati",
+      "Gene_Label": "180128915-8",
+      "Location": {
+        "start": 58,
+        "end": 90
+      }
+    }
+  ]
+}, {
+  "_id": "d471c7f9-3992-43a2-acf1-db06876dff8e",
+  "DNA_Seq": "lmI6KeeI",
+  "DOI": "21.187.251.37/4",
+  "Authors": [
+    {
+      "Author": "Wade Dursley"
+    },
+    {
+      "Author": "Morgan Klimushev"
+    }
+  ],
+  "SBOL-VO-WS": "/mus.xml",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Uraeginthus bengalus",
+      "Gene_Label": "121403421-7",
+      "Location": {
+        "start": 72,
+        "end": 14
+      }
+    },
+    {
+      "Ontology_Term": "Fregata magnificans",
+      "Gene_Label": "134107537-0",
+      "Location": {
+        "start": 86,
+        "end": 34
+      }
+    },
+    {
+      "Ontology_Term": "Odocoilenaus virginianus",
+      "Gene_Label": "783665158-4",
+      "Location": {
+        "start": 88,
+        "end": 17
+      }
+    },
+    {
+      "Ontology_Term": "Buteo regalis",
+      "Gene_Label": "756145517-8",
+      "Location": {
+        "start": 3,
+        "end": 46
+      }
+    },
+    {
+      "Ontology_Term": "Choloepus hoffmani",
+      "Gene_Label": "311229680-X",
+      "Location": {
+        "start": 5,
+        "end": 36
+      }
+    },
+    {
+      "Ontology_Term": "Deroptyus accipitrinus",
+      "Gene_Label": "942758162-X",
+      "Location": {
+        "start": 20,
+        "end": 21
+      }
+    }
+  ]
+}, {
+  "_id": "522183cd-b930-4d31-a232-b769c0d5b7ec",
+  "DNA_Seq": "K1CFKu2JUb",
+  "DOI": "249.69.123.42/21",
+  "Authors": [
+    {
+      "Author": "Doti Ginner"
+    },
+    {
+      "Author": "Hobard Fowles"
+    },
+    {
+      "Author": "Zonda Ellison"
+    },
+    {
+      "Author": "Ansley Mulderrig"
+    }
+  ],
+  "SBOL-VO-WS": "/diam/in/magna/bibendum/imperdiet/nullam.xml",
+  "SBOL_Glyphs": [
+    {
+      "Ontology_Term": "Equus hemionus",
+      "Gene_Label": "774592495-2",
+      "Location": {
+        "start": 1,
+        "end": 36
+      }
+    },
+    {
+      "Ontology_Term": "Colobus guerza",
+      "Gene_Label": "732346135-9",
+      "Location": {
+        "start": 21,
+        "end": 24
+      }
+    },
+    {
+      "Ontology_Term": "Melursus ursinus",
+      "Gene_Label": "583175946-6",
+      "Location": {
+        "start": 78,
+        "end": 39
+      }
+    },
+    {
+      "Ontology_Term": "Panthera leo",
+      "Gene_Label": "198116082-5",
+      "Location": {
+        "start": 59,
+        "end": 75
+      }
+    },
+    {
+      "Ontology_Term": "Sciurus niger",
+      "Gene_Label": "878636549-5",
+      "Location": {
+        "start": 10,
+        "end": 64
+      }
+    },
+    {
+      "Ontology_Term": "Lemur fulvus",
+      "Gene_Label": "339616094-0",
+      "Location": {
+        "start": 30,
+        "end": 51
+      }
+    },
+    {
+      "Ontology_Term": "Macropus fuliginosus",
+      "Gene_Label": "623627689-7",
+      "Location": {
+        "start": 82,
+        "end": 55
+      }
+    },
+    {
+      "Ontology_Term": "Gyps bengalensis",
+      "Gene_Label": "402492794-9",
+      "Location": {
+        "start": 36,
+        "end": 36
+      }
+    },
+    {
+      "Ontology_Term": "Marmota monax",
+      "Gene_Label": "508490797-X",
+      "Location": {
+        "start": 6,
+        "end": 17
+      }
+    }
+  ]
+}]
