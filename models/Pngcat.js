@@ -7,53 +7,46 @@ const SBOL_Glyph = new Schema({
   // Name of gene
   Gene_Label: { type: String, required: true },
 
-  // Section of DNA_Seq tied to glyph (number of G/C/A/Ts)
-  Gene_Location: {
-    start: {
-      type: Number,
-      required: true,
-
-      // SBOL sequences start at 1
-      min: [1, 'Must start at or after first basepair.']
-    },
-    end: {
-      type: Number,
-      required: true,
-      min: [this.start + 1, "Gene must be longer than 1 bp."]
-    }
-  },
-
-  // Range.Orientation?
-
   // Function of gene
   // SBOL API url: http://{SBOL-VO-WS}/glyph/{ONTOLOGY_TERM}"}
   Ontology_Term: {
     type: String,
     required: true
   },
-})
 
+  // Optional: Section of DNA_Seq tied to glyph (number of G/C/A/Ts)
+  Gene_Location: {
+    required: false,
+    start: {
+      type: Number,
+      // SBOL sequences start at 1
+      min: [1, 'Must start at or after first basepair.']
+    },
+    end: {
+      type: Number,
+      min: [this.start + 1, "Gene must be longer than 1 bp."]
+    }
+  },
+});
+
+// Removed authors & DNA seq since api doesn't return it.
 const PngcatSchema = new Schema({
 
   // Symbols mapping to genes / functions
   SBOL_Glyphs: {
-    type: [SBOL_Glyph],
-    required: true
+    type: [SBOL_Glyph]
   },
 
-  // Researchers
-  Authors: { type: [String], required: true },
+  /* ---- Keys ---- */
+  // ENA Foreign key
+  Seq_Accession: { type: String, required: true },
 
-  // Article link
-  DOI: { type: String, required: true },
-
-  // G/C/A/T sequence
-  DNA_Seq: { type: String, required: true },
+  // ENA Linked article key
+  Study_Accession: { type: String, required: true },
 
   // SBOL API url: http://{SBOL-VO-WS}/glyph/{ONTOLOGY_TERM}"}
   'SBOL-VO-WS': { type: String, required: true },
 
-  // TODO: GenBank foreign key
-})
+});
 
 module.exports = model('Pngcat', PngcatSchema);
