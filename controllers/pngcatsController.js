@@ -1,6 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const Pngcat = require('../models/Pngcat')
+const fs = require('fs')
+
+'use strict';
+
+// Index Mock Search
+router.get('/Search', (req, res) => {
+  let jsonData = require('../models/mockSearchResult.json')
+  res.status(200).json(jsonData)
+  console.log(jsonData)
+})
 
 // Index
 router.get('/', async (req, res) => {
