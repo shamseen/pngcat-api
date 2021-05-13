@@ -14,16 +14,14 @@ const SBOL_GlyphSchema = new Schema({
             // SBOL sequences start at 1
             min: [1, 'Must start at or after first basepair.']
         },
-        end: { type: Number, required: true },
-        validate: {
-            validator: (s) => {
-                return s.end - s.start > 1;
-            },
-            message: 'Length must be longer than 1 bp.'
+        end: {
+            type: Number,
+            required: true,
+            min: [this.start + 1, "Gene must be longer than 1 bp."]
         }
-
-        // Range.Orientation?
     },
+
+    // Range.Orientation?
 
     // Function of gene
     // SBOL API url: http://{SBOL-VO-WS}/glyph/{ONTOLOGY_TERM}"}
