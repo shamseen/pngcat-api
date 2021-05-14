@@ -19,9 +19,10 @@ class ENAService {
     enaStudy = '';
 
     // calls API using a pre-made rule on their side.
+    // TODO: use POST endpoint
     async getSequences() {
         try {
-            const response = await axios.get('https://www.ebi.ac.uk/ena/portal/api/search?rule=pngcat-dna-studies&sortDirection=asc');
+            const response = await axios.get('https://www.ebi.ac.uk/ena/portal/api/search?rule=8624c855-9921-4b98-b763-ac0d79b6a567');
 
             return response.data;
 
