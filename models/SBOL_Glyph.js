@@ -1,5 +1,6 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 
+// Subdocument
 const SBOL_GlyphSchema = new Schema({
 
     // Name of gene
@@ -31,4 +32,5 @@ const SBOL_GlyphSchema = new Schema({
     },
 })
 
-module.exports = model('SBOL_Glyph', SBOL_GlyphSchema);
+//  exporting schema as is since it's a subdocument
+module.exports = SBOL_GlyphSchema;
