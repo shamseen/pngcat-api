@@ -1,5 +1,5 @@
 /* --- Required modules --- */
-require('dotenv').config()          // inject .env into process.env
+require('dotenv').config();          // inject .env into process.env
 const express = require('express'); // http server
 const cors = require('cors');       // expose resources for external websites
 const mongoose = require('mongoose'); // talks to mongo db
@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false
-})
+});
 // confirm connection
 mongoose.connection.once('connected', () => console.log('>> mongoose is connected to mongoDB'));
 
@@ -29,11 +29,12 @@ app.use((req, res, next) => {
 app.use(cors());              // exposes endpoints for apps to request
 
 /* --- Routes --- */
-app.use('/pngcats', require('./controllers/pngcatsController'))
+app.use('/pngcats', require('./controllers/pngcatsController'));
+app.use('/search', require('./controllers/searchController'));
 
 app.get('/', (req, res) => {
-  res.send(`<h1>.pnGCAT API</h1>`)
+  res.send(`<h1>.pnGCAT API</h1>`);
 })
 
 /* --- Leggggoooooooo --- */
-app.listen(PORT, () => console.log(`>> API Server: Listening on port ${PORT}. waiting for database...`))
+app.listen(PORT, () => console.log(`>> API Server: Listening on port ${PORT}. waiting for database...`));
