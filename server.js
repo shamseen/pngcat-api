@@ -1,40 +1,39 @@
-require('dotenv').config()
+/* --- Required modules --- */
+require('dotenv').config()          // inject .env into process.env
+const express = require('express'); // http server
+const cors = require('cors');       // expose resources for external websites
+const mongoose = require('mongoose'); // talks to mongo db
 
-const express = require('express');
-const mongoose = require('mongoose');
-
-const cors = require('cors');
-
-
+/* --- App variables --- */
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
-app.use(express.json())
-app.use((req, res, next) => {
-  console.log(req.body)
-  next()
-})
-app.use(cors())
-
+/* --- Connect to database --- */
 mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false
+})
+// confirm connection
+mongoose.connection.once('connected', () => console.log('>> mongoose is connected to mongoDB'));
+
+/* --- Middleware for CRUD & controller routing --- */
+app.use(express.json());       // reads incoming PUT/POST as json
+
+app.use((req, res, next) => {
+  console.log(req.body);      // logging the request
+  next();                     // run next middleware func
 });
 
-mongoose.connection.once('connect', () => {
-  console.log('Connected to MongoDB')
-})
+app.use(cors());              // exposes endpoints for apps to request
 
+/* --- Routes --- */
 app.use('/pngcats', require('./controllers/pngcatsController'))
 
 app.get('/', (req, res) => {
-  res.send(`<h1>pngcat</h1>`)
+  res.send(`<h1>.pnGCAT API</h1>`)
 })
 
-
-
-
-
-app.listen(PORT, () => console.log('API Server: Listening on ', PORT))
+/* --- Leggggoooooooo --- */
+app.listen(PORT, () => console.log(`>> API Server: Listening on port ${PORT}. waiting for database...`))
