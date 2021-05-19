@@ -9,10 +9,7 @@ const axios = require('axios')
 
 
 class ENADataService {
-    /* -  populating with fixed search on instantiation - */
-    constructor() {
-        this.searchENA();
-    }
+    /* -- default constructor -- */
 
     /* -- variables for JOINs -- */
     // static baseURL = 'https://www.ebi.ac.uk/ena/portal/api/search?dataPortal=ena&query=';
@@ -24,10 +21,9 @@ class ENADataService {
     // using a custom rule i made on their side instead
     async searchENA() {
         try {
-            const response = await axios.get('https://www.ebi.ac.uk/ena/portal/api/search?rule=8624c855-9921-4b98-b763-ac0d79b6a567');
+            const response = await axios.get('https://www.ebi.ac.uk/ena/portal/api/search?format=json&rule=8624c855-9921-4b98-b763-ac0d79b6a567');
 
-            this.enaData = response.data; // axios returns JSON already
-            return this.enaData;
+            return response.data; // axios returns JSON already
 
         } catch (error) {
             // console.log(error);
@@ -38,16 +34,24 @@ class ENADataService {
 
     /* -- Search Functionality -- */
 
-    filterByAccession(accType, value, arr) {
-
+    filterByAccession(accType, value, data) {
+        console.log('accession');
+        const filtered = data.filter(d => d[accType] === value);
+        return filtered;
     }
 
-    filterByKeyword(keyword, arr) {
-
+    // looking at ENA record's description and scientific name
+    filterByKeyword(keyword, record) {
+        console.log(record);
+        return (record.scientific_name.includes(keyword)
+            || record.description.includes(keyword));
     }
 
-    search(seq_accession, study_accession, keyword) {
+    async search(seq_accession, study_accession, keyword) {
+        this.enaData = await this.searchENA();
+
         let results = [...this.enaData];
+        console.log(results);
 
         if (seq_accession !== '')
             results = this.filterByAccession('accession', seq_accession, results);
@@ -56,7 +60,7 @@ class ENADataService {
             results = this.filterByAccession('study_accession', study_accession, results);
 
         if (keyword !== '')
-            results = this.filterByKeyword(keyword, results);
+            results = results.filter(r => this.filterByKeyword(keyword, r));
 
         return results;
     }
