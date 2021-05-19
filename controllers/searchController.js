@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const ENAService = require('../dataServices/enaService');
-const ena = new ENAService();
+const ENADataService = require('../dataServices/enaDataService');
+const ena = new ENADataService();
 
 // TEST GET!
 router.get('/', async (req, res) => {
-    // const filter = { [req.params.prop]: req.params.val };
 
     try {
-        const found = await ena.getSequences();
+        const found = ena.enaData;
         res.status(200).json(found);
 
     } catch (err) {
@@ -19,13 +18,14 @@ router.get('/', async (req, res) => {
     }
 });
 
-
-// Show => GET by any prop
-router.get('/:prop/:val', async (req, res) => {
+// 
+router.get('/:query', async (req, res) => {
     // const filter = { [req.params.prop]: req.params.val };
+    // TODO: parse query, search mongo too
 
     try {
-        const found = await enaService.search(req.params.prop, req.params.val);
+        const found = [];
+        // const found = await enaService.search();
         res.status(200).json(found);
 
     } catch (err) {
