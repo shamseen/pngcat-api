@@ -4,22 +4,19 @@ const Pngcat = require("../models/Pngcat");
 
 ("use strict");
 
-// Index / Home
-// router.get("/", async (req, res) => {
-// 	res.status(200).send("ATTAGGCATmeowCATGTGGAT"); // bc i'm a dork
-// });
-
-// // Search results
-// router.get('/Search', (req, res) => {
-//   // getting dummy data
-//   let jsonData = require('../models/mockSearchResult.json')
-
-//   // returning unaltered JSON
-//   res.status(200).json(jsonData)
-// })
-
-// Index two
+// Index: an ok message to show it's working.
 router.get("/", async (req, res) => {
+	try {
+		res.status(200).json('welcome to pnGCAT controller!');
+	} catch (err) {
+		res.status(400).json({
+			msg: err.message,
+		});
+	}
+});
+
+// Showing all 
+router.get("/all", async (req, res) => {
 	try {
 		const foundPngcats = await Pngcat.find({});
 		res.status(200).json(foundPngcats);

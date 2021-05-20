@@ -14,6 +14,8 @@ mongoose.connect(process.env.MONGO_URI, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useFindAndModify: false,
+  connectTimeoutMS: 3000  // Extending in case heroku is slow
+
 });
 // confirm connection
 mongoose.connection.once("connected", () =>
