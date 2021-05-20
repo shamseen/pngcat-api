@@ -7,7 +7,6 @@
 /* -------------------------------------------------------------- */
 const axios = require('axios')
 
-
 class ENADataService {
     /* -- default constructor -- */
 
@@ -20,10 +19,12 @@ class ENADataService {
 
     // using a custom rule i made on their side instead
     async searchENA() {
+
         try {
             const response = await axios.get('https://www.ebi.ac.uk/ena/portal/api/search?format=json&rule=8624c855-9921-4b98-b763-ac0d79b6a567');
 
-            return response.data; // axios returns JSON already
+            this.enaData = response.data; // axios returns JSON already
+            return this.enaData;
 
         } catch (error) {
             // console.log(error);
@@ -42,16 +43,15 @@ class ENADataService {
 
     // looking at ENA record's description and scientific name
     filterByKeyword(keyword, record) {
-        console.log(record);
         return (record.scientific_name.includes(keyword)
             || record.description.includes(keyword));
     }
 
     async search(seq_accession, study_accession, keyword) {
-        this.enaData = await this.searchENA();
+        if (!this.enaData)
+            await this.searchENA(); // it may have been prefetched
 
         let results = [...this.enaData];
-        console.log(results);
 
         if (seq_accession !== '')
             results = this.filterByAccession('accession', seq_accession, results);
@@ -79,5 +79,4 @@ class ENADataService {
     }
     */
 }
-
 module.exports = ENADataService;

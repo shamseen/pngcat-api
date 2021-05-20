@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const queryString = require('querystring');
 const ENADataService = require('../dataServices/enaDataService');
-const ena = new ENADataService();
+const enaDataService = new ENADataService();
 
 // TEST GET!
 router.get('/', async (req, res) => {
 
     try {
-        const found = ena.enaData;
+        const found = await enaDataService.searchENA();
         res.status(200).json(found);
 
     } catch (err) {
@@ -18,14 +19,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-// 
+// search in the format of : seqId=<>&studyId=<>&keyword=<>
 router.get('/:query', async (req, res) => {
-    // const filter = { [req.params.prop]: req.params.val };
-    // TODO: parse query, search mongo too
+
+    const filter = queryString.parse(req.params.query);
 
     try {
-        const found = [];
-        // const found = await enaService.search();
+        const found = await enaDataService.search(filter.seqId, filter.studyId, filter.keyword);
         res.status(200).json(found);
 
     } catch (err) {
